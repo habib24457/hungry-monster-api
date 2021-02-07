@@ -1,6 +1,11 @@
 .inputSize {
   width: 300px;
 }
+.navbar-brand h3{
+    color: rgb(58, 189, 134); 
+    padding: 5px;
+    border: rgb(206, 182, 187) 2px solid;
+}
 
 
 .showMeal img {
