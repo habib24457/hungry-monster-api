@@ -1,14 +1,11 @@
-    //fetching the api data
-    const searchMeal = inputKey =>{  
-    
-        const url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${inputKey}`;
-        fetch(url)
-        .then(res => res.json())
-        .then(data =>displayMeal(data))
+    const searchMealByName = urlInput =>{
+        fetch(urlInput)
+        .then(resp => resp.json())
+        .then(data=>displayMeal(data))
         .catch((error) => {
             alert("invalid input");
             console.log(error)
-          });     
+          });   
     }
 
         //displaying data
@@ -19,7 +16,7 @@
         if(mealValue === '' ||mealValue === null ||mealValue ===undefined){
             alert("nothing to show");
         }else{      
-        
+
         for(let i=0; i<mealValue.length;i++){
            const eachMeal = document.createElement('div');//creating a div for each meal
            const meal = mealsData.meals[i];
@@ -80,18 +77,25 @@
 
 
     function gettingInput(){
-
-    const key = document.getElementById("inputAlphabet").value; 
+    const key = document.getElementById("inputMealName").value; 
     if(key===''){
         alert("Input can't be empty");
+    }else if(key.length==1){ 
+        setDivToEmpty();
+        const urlForAlphabet = `https://www.themealdb.com/api/json/v1/1/search.php?f=${key}`;
+        searchMealByName(urlForAlphabet); 
     }else{
+        setDivToEmpty();
+        const urlForName = `https://www.themealdb.com/api/json/v1/1/search.php?s=${key}`;      
+        searchMealByName(urlForName);    
+    }   
+    }
+
+    function setDivToEmpty(){
         const mealSection = document.getElementById("meal-div"); 
         const infoSection = document.getElementById("namePhoto");
         const infoSectionList = document.getElementById("info-list");
         mealSection.innerHTML =''; 
         infoSection.innerHTML='';
         infoSectionList.innerHTML='';
-        searchMeal(key); 
-    }
-    
     }
