@@ -1,0 +1,57 @@
+.inputSize {
+  width: 300px;
+}
+
+
+.showMeal img {
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.showMeal-info img{
+    width: 350px;
+    height: 250px;
+    border-radius: 4px; 
+    
+}
+
+.showMeal-info{
+    margin-bottom: 20px;
+}
+
+
+
+.oneMealInfoCSS img{
+    width: 250px;
+    height: 250px;
+}
+
+.list-group li{
+    list-style: none;
+}
+
+.showMeal {
+padding-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  grid-row-gap: 10px;
+}
+
+.mealCSS {
+  border: 1px solid greenyellow;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+}
+
+#showing-meals-area {
+  padding-top: 130px;
+}
+
+#searching-meals {
+  padding-top: 50px;
+}
